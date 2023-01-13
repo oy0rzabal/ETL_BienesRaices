@@ -1,6 +1,6 @@
 #Impport library:
 import random
-from time from sleep
+from time import sleep
 from selenium import webdriver
 
 #controlamos el webdriver:
@@ -15,11 +15,11 @@ def test_search(self):
 def extrac_data_test(sel):
     casa = self.casas
     for i in casa:
-        precio = self.casas.find_element_by_xpath('.//div[@class="sc-12dh9kl-3 gGCVnu"]')
-        localizacion = self.casas.find_element_by_xpath('//div[@class="sc-ge2uzh-2 ggYRKF"]')
-        zona = self.casas.find_element_by_xpath('//div[@class ="sc-ge2uzh-0 lnBueA"]')
-        m2_estacionamiento = self.casas.find_element_by_xpath('//div[@class="sc-1uhtbxc-0 cAEjmC"]')
-        direccion = self.casas.fins_element_by_spath('//div[@class="sc-i1odl-12 bKAWqU"]')
+        precio = casa.find_element_by_xpath('.//div[@class="sc-12dh9kl-3 gGCVnu"]').text
+        localizacion = casa.find_element_by_xpath('//div[@class="sc-ge2uzh-2 ggYRKF"]').text
+        zona = casa.find_element_by_xpath('//div[@class ="sc-ge2uzh-0 lnBueA"]').text
+        m2_estacionamiento = casa.find_element_by_xpath('//div[@class="sc-1uhtbxc-0 cAEjmC"]').text
+        direccion = casa.fins_element_by_spath('//div[@class="sc-i1odl-12 bKAWqU"]').text
 
 def tearDown():
     self.driver.close()

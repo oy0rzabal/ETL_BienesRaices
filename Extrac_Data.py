@@ -4,8 +4,11 @@ from time import sleep
 from selenium import webdriver
 
 #controlamos el webdriver:
+options = webdriver.ChromeOptions()
+options.binary_location = "/Applications/Google Chrome 2.app/Contents/MacOS/Google Chrome"
+executable_path = "./chromediver.exe"
+driver = webdriver.Chrome(executable_path=executable_path, chrome_options=options)
 
-driver = webdriver.Chrome('./chromediver.exe')
 
 driver = driver
 driver.get("https://www.inmuebles24.com/oficinas-en-venta-q-acapulco.htmlv") #Mandame a llamar la pagina

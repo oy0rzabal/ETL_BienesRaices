@@ -1,12 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pandas as pd
+#---------------------------------------------------------------WebScraping a ventas--------------------------------------------------------------
 
-#Pagina a Scrapiar: https://www.inmuebles24.com/oficinas-en-renta-en-acapulco-de-juarez.html
-#Documentacion a Seguir: https://selenium-python.readthedocs.io/locating-elements.html
-
-
-web = "https://www.inmuebles24.com/oficinas-en-renta-en-acapulco-de-juarez.html"
+web = "https://www.inmuebles24.com/oficinas-en-venta-q-acapulco.html"
 path = '/Escritorio/chromedriver'
 driver = webdriver.Chrome(path)
 driver.get(web)
@@ -36,8 +33,5 @@ for product in products:
 
 driver.quit()
 # Almacenando data en un dataframe y exportando a un archivo CSV
-data_renta = pd.DataFrame({'info': precio, 'm2_a_l_estac':m2_a_l_estac, 'descripcion':descripcion, 'direccion':direccion})
-data_renta.to_csv('info.csv', index=False)
-
-
-
+data_venta = pd.DataFrame({'info': precio, 'm2_a_l_estac':m2_a_l_estac, 'descripcion':descripcion, 'direccion':direccion})
+data_venta.to_csv('info.csv', index=False)

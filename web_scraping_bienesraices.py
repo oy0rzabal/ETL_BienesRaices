@@ -2,6 +2,8 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 import pandas as pd
 
+#Pagina a Scrapiar: https://www.inmuebles24.com/oficinas-en-renta-en-acapulco-de-juarez.html
+
 web = "https://www.inmuebles24.com/oficinas-en-renta-en-acapulco-de-juarez.html"
 path = '/Escritorio/chromedriver'
 driver = webdriver.Chrome(path)

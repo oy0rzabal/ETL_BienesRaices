@@ -4,7 +4,7 @@ import pandas as pd
 #---------------------------------------------------------------WebScraping a ventas--------------------------------------------------------------
 
 web = "https://propiedades.com/acapulco/oficinas-renta"
-path = '/Escritorio/chromedriver'
+path = 'chromedriver'
 driver = webdriver.Chrome(path)
 driver.get(web)
 driver.maximize_window()
@@ -12,7 +12,7 @@ driver.maximize_window()
 # Localizar el contenedor (container) que contiene todos los audiolibros listados en la pagina
 container = driver.find_element(By.ID, "__next")
 # Obtener todos los audiolibros listados (el "/" da los nodos hijos)
-products = container.find_elements(By.XPATH, './/div[@class="properties-cards"]')
+products = container.find_elements(By.XPATH, './/section[@class="sc-b38b1161-0 kFFvKh pcom-property-card-body"]')
 # products = container.find_elements_by_xpath('./li')
 
 # Inicializar el almacenamiento
@@ -32,4 +32,4 @@ for product in products:
 driver.quit()
 # Almacenando data en un dataframe y exportando a un archivo CSV
 data_venta = pd.DataFrame({'info': precio, 'm2_a_l_estac':m2_a_l_estac, 'direccion':direccion})
-data_venta.to_csv('info_2.csv', index=False)
+data_venta.to_csv('propiedades_com.csv', index=False)

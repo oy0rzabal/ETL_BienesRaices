@@ -67,7 +67,9 @@ for product in products:
 driver.quit()
 
 # Almacenando data en un dataframe y exportando a un archivo CSV
-data_renta = pd.DataFrame({'info': precio_2, 'm2_a_l_estac':m2_a_l_estac_2, 'direccion':direccion_2})
-data_renta.to_csv('rentas_2.csv', index=False)
+def data():
+    data_renta = pd.DataFrame({'info': precio_2, 'm2_a_l_estac':m2_a_l_estac_2, 'direccion':direccion_2})
+    data_renta.to_csv('rentas_2.csv', index=False)
+    
 
 

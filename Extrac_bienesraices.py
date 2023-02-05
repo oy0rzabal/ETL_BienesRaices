@@ -37,7 +37,7 @@ driver.quit()
 # Almacenando data en un dataframe y exportando a un archivo CSV
 def rentas():
     rentas = pd.DataFrame({'info': precio, 'm2_a_l_estac': m2_a_l_estac, 'descripcion': descripcion, 'direccion': direccion})
-    return rentas.to_csv('rentas.csv', index=False)
+    return rentas
 
 #---------------------------------------------------------------WebScraping a ventas--------------------------------------------------------------
 
@@ -77,22 +77,21 @@ driver.quit()
 # Almacenando data en un dataframe y exportando a un archivo CSV
 def renta():
     renta = pd.DataFrame({'info': precio_2, 'm2_a_l_estac':m2_a_l_estac_2, 'direccion':direccion_2})
-    return renta.to_csv('renta.csv', index=False)
+    return renta
 
 #Creacion de una funcion para la concatenacion de los archivos:
 #def renta():
 
     #return
 
-def data_df():
-    rentas = pd.read_csv('rentas.csv')
-    rentas_2 = pd.read_csv('rentas_2.csv')
+def data_df(renta = renta(), rentas=rentas()):
     # Concatenamos los datos:
-    df = pd.concat([rentas, rentas_2], axis=0)
+    df = pd.concat([renta, rentas], axis=0)
     # Resetemos el index del nuevo datafrem:
     df = df.reset_index(drop=True, inplace=True)
-    return df.to_csv('data.csv', index=False)
+    return
 
 
 if __name__ == '__main__':
-    print(data_df = data_df())
+    data_df = data_df()
+    data_df.to_csv('data.csv', index=False)
